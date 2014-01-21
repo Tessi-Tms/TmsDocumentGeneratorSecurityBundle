@@ -17,34 +17,28 @@ class Security implements SecurityInterface
         $this->securityToken = $securityToken;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function getSecurityToken()
     {
         return $this->securityToken;
     }
 
     /**
-     * Generate a token from a given string
-     *
-     * @param string $data
-     * @param string $key
-     * @return string
+     * {@inheritDoc}
      */
-    public function generateToken($data, $key)
+    public function generateToken($data, $salt)
     {
-        return hash_hmac(self::$algorithm, $data, $key);
+        return hash_hmac(self::$algorithm, $data, $salt);
     }
 
     /**
-     * Determine if a token is valid
-     *
-     * @param array $data
-     * @param string $key
-     * @param string $token
-     * @return boolean
+     * {@inheritDoc}
      */
-    public function checkTokenValidity(array $data, $key, $token)
+    public function checkTokenValidity(array $data, $salt, $token)
     {
-        $recalculatedToken = $this->generateToken(implode('.', $data), $key);
+        $recalculatedToken = $this->generateToken(implode('.', $data), $salt);
         if ($recalculatedToken !== $token) {
             return false;
         }
@@ -53,10 +47,7 @@ class Security implements SecurityInterface
     }
 
     /**
-     * Decode data string and return an associative array
-     *
-     * @param string $queryData
-     * @return array
+     * {@inheritDoc}
      */
     public function decodeQueryDataToParameters($queryData)
     {
@@ -64,10 +55,7 @@ class Security implements SecurityInterface
     }
 
     /**
-     * Encode an associative array to a string
-     *
-     * @param array $parameters
-     * @return string
+     * {@inheritDoc}
      */
     public function encodeParametersToQueryData(array $parameters)
     {
