@@ -1,1 +1,4 @@
-#services:
+services:
+    tms_document_generator_security.security:
+        class: Tms\Bundle\DocumentGeneratorSecurityBundle\Security\Security
+        arguments: [%tms_document_generator_security.security_token%]
