@@ -1,0 +1,23 @@
+{
+    "name": "tms/document-generator-security-bundle",
+    "type": "symfony-bundle",
+    "description": "TMS DocumentGeneratorSecurityBundle",
+    "keywords": [],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "TESSI MARKETING",
+            "email": "contact@tessi.fr",
+            "homepage": "http://www.tessi.fr"
+        }
+    ],
+    "require": {
+        "php":                                 ">=5.3.3",
+        "symfony/framework-bundle":            ">=2.3"
+    },
+    "autoload": {
+        "psr-0": { "Tms\\Bundle\\DocumentGeneratorSecurityBundle": "" }
+    },
+    "target-dir": "Tms/Bundle/DocumentGeneratorSecurityBundle",
+    "minimum-stability": "dev"
+}
