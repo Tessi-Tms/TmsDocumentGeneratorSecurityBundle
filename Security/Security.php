@@ -12,13 +12,19 @@ class Security implements SecurityInterface
     private static $algorithm = 'md5'; // Algorithm used to generate the token
     private $securityToken;
 
+    /**
+     * Constructor
+     *
+     * @param string $securityToken
+     */
     public function __construct($securityToken)
     {
         $this->securityToken = $securityToken;
     }
 
     /**
-     * {@inheritDoc}
+     * Get the configurated security token
+     *
      */
     public function getSecurityToken()
     {

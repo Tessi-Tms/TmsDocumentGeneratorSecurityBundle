@@ -5,20 +5,6 @@ namespace Tms\Bundle\DocumentGeneratorSecurityBundle\Security;
 interface SecurityInterface
 {
     /**
-     * Get the configurated security token
-     */
-    public function getSecurityToken();
-
-    /**
-     * Generate a token from a given string
-     *
-     * @param string $data
-     * @param string $salt
-     * @return string
-     */
-    public function generateToken($data, $salt);
-
-    /**
      * Determine if a token is valid
      *
      * @param array  $data
