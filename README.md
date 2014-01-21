@@ -46,3 +46,14 @@ public function registerBundles()
 }
 ```
 
+Set the parameters:
+
+``` yaml
+# app/config/parameters.yml.dist and app/config/parameters.yml
+
+parameters:
+    ...
+
+    tms_document_generator_security.security_token: '' # The given security token in order to retrieve templates salts
+
+```
